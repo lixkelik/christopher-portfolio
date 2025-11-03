@@ -1,25 +1,22 @@
-import { Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
-import { cn } from "../lib/utils";
-// import { useToast } from "../hooks/use-toast";
-import { useState } from "react";
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export const ContactSection = () => {
   //   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
 
-    setIsSubmitting(true);
+  //   setIsSubmitting(true);
 
-    setTimeout(() => {
-      //   toast({
-      //     title: "Message Sent!",
-      //     description: "Thank you for reaching out. I'll get back to you soon.",
-      //   });
+  //   setTimeout(() => {
+  //     //   toast({
+  //     //     title: "Message Sent!",
+  //     //     description: "Thank you for reaching out. I'll get back to you soon.",
+  //     //   });
 
-      setIsSubmitting(false);
-    }, 1500);
-  };
+  //     setIsSubmitting(false);
+  //   }, 1500);
+  // };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
