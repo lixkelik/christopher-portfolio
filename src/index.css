@@ -148,8 +148,73 @@
 }
 
 @utility meteor {
-  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+  /* Matrix rain override POC: convert .meteor streaks into vertical character columns */
+  position: absolute;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Liberation Mono",
+    monospace;
+  font-size: 14px;
+  line-height: 1.05;
+  /* Use theme primary (purple) for glyph color & glow */
+  color: hsl(var(--primary));
+  text-shadow: 0 0 6px hsl(var(--primary) / 0.55), 0 0 12px hsl(var(--primary) / 0.35);
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  user-select: none;
+  animation: matrix-fall var(--fall-duration, 8s) linear infinite;
+  filter: drop-shadow(0 0 4px hsl(var(--primary) / 0.4));
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Character styling with subtle gradient and glow */
+.meteor span {
+  opacity: 0.18;
+  animation: matrix-char-glow 2.2s linear infinite;
+}
+.meteor span:nth-child(1) {
+  opacity: 1;
+  filter: brightness(1.9);
+}
+.meteor span:nth-child(2) {
+  opacity: 0.92;
+}
+.meteor span:nth-child(3) {
+  opacity: 0.78;
+}
+.meteor span:nth-child(4) {
+  opacity: 0.62;
+}
+.meteor span:last-child {
+  opacity: 0.15;
+}
+
+@keyframes matrix-fall {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+@keyframes matrix-char-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 4px hsl(var(--primary) / 0.6);
+  }
+  50% {
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.9);
+  }
 }
 
 #root {

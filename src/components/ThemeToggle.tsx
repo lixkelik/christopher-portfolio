@@ -24,6 +24,12 @@ export const ThemeToggle = () => {
       localStorage.setItem("theme", "dark");
     }
     setIsDarkMode(!isDarkMode);
+    // Dispatch a custom event so other components can react without prop drilling
+    window.dispatchEvent(
+      new CustomEvent("theme-changed", {
+        detail: { theme: !isDarkMode ? "dark" : "light" },
+      })
+    );
   };
   return (
     <button
@@ -32,6 +38,7 @@ export const ThemeToggle = () => {
         "fixed max-sm:hidden top-2 right-5 z-50 p-2 rounded-full transition-colors duration-300",
         "focus:outline-hidden"
       )}
+      aria-label="Toggle theme"
     >
       {isDarkMode ? (
         <Sun className="h-6 w-6 text-yellow-300" />
