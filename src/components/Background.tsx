@@ -46,12 +46,15 @@ export const Background = () => {
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerleave", onLeave);
     const handler = (e: Event) => {
-      if ((e as CustomEvent).detail?.theme) {
-        setIsDark((e as CustomEvent).detail.theme === "dark");
-      } else {
-        // Fallback read from DOM
-        setIsDark(document.documentElement.classList.contains("dark"));
+      const detailTheme = (e as CustomEvent).detail?.theme;
+      const nextIsDark = detailTheme
+        ? detailTheme === "dark"
+        : document.documentElement.classList.contains("dark");
+      // When switching into dark after initial mount, regenerate rain columns
+      if (nextIsDark && !isDark) {
+        generateRainColumns();
       }
+      setIsDark(nextIsDark);
     };
     window.addEventListener("theme-changed", handler as EventListener);
     return () => {
