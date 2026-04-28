@@ -8,5 +8,5 @@ compatibility_date = "2024-09-01"
 # Set ALLOWED_ORIGIN as an environment variable in this file
 # (your portfolio URL — restricts who can call your worker).
 [vars]
-ALLOWED_ORIGIN = "https://christopheratika.site,https://www.christopheratika.site,https://lixkelik.github.io"
+ALLOWED_ORIGIN = "https://christopheratika.site,https://www.christopheratika.site"
 GROQ_MODEL = "llama-3.3-70b-versatile"
