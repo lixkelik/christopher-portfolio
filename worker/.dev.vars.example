@@ -1,0 +1,9 @@
+# Local-only secrets and vars for `wrangler dev`. Copy to `.dev.vars` and fill
+# in. NEVER paste real keys into this example file — it's committed to git.
+#
+# Get a Groq key at https://console.groq.com/keys
+GROQ_API_KEY=
+
+# Override ALLOWED_ORIGIN locally so the dev worker accepts your Vite dev
+# server. Production keeps the strict value from wrangler.toml.
+ALLOWED_ORIGIN="http://localhost:5173,http://localhost:4173"

@@ -1,0 +1,157 @@
+[
+  {
+    "id": "aura",
+    "title": "Aura",
+    "tagline": "AI-powered outfit assistant for the visually impaired",
+    "summary": "An assistive app that helps blind users pick outfits matching the occasion, powered by a custom-built AI model and RFID tags.",
+    "cover": "projects/aura.png",
+    "gallery": [
+      { "src": "projects/aura.png", "caption": "App cover" }
+    ],
+    "tags": ["Flutter", "TensorFlow", "RFID", "Accessibility"],
+    "category": "Mobile / AI",
+    "role": "Mobile & ML Engineer",
+    "timeline": "2024",
+    "team": "Team of 4",
+    "status": "Live",
+    "featured": true,
+    "problem": "Blind and visually-impaired individuals often struggle to dress appropriately for specific occasions because they cannot visually verify outfit combinations. Existing solutions rely on memorisation or sighted assistance, which limits independence.\n\nAura tackles this by combining RFID-tagged clothing items with an on-device AI model that recommends outfits based on the purpose the user states (e.g. work, casual, formal).",
+    "features": [
+      "Custom-trained ML model for outfit matching by occasion",
+      "RFID scanner integration to identify garments instantly",
+      "Voice-first interaction tuned for screen reader users",
+      "Wardrobe registration flow with audio confirmations"
+    ],
+    "techStack": [
+      { "name": "Flutter", "icon": "flutter" },
+      { "name": "TensorFlow", "icon": "tensorflow" },
+      { "name": "TensorFlow Lite", "icon": "tensorflow" },
+      { "name": "RFID" },
+      { "name": "Dart", "icon": "dart" }
+    ],
+    "learnings": [
+      "Designing UX for non-visual primary users completely changes default assumptions.",
+      "Quantising a TensorFlow model for on-device inference on mid-range Android phones.",
+      "Bridging native RFID hardware events into a Flutter app via platform channels."
+    ],
+    "links": {
+      "demo": "https://drive.google.com/file/d/1ZWQM6mltKVA3lvphE-JECtQaig2UXqpD/view?usp=sharing"
+    }
+  },
+  {
+    "id": "visio",
+    "title": "Visio",
+    "tagline": "Gamified learning for visually-impaired children",
+    "summary": "A playful, audio-first learning app that helps blind children grasp object meanings and social interactions through gamified lessons.",
+    "cover": "projects/visio.png",
+    "gallery": [
+      { "src": "projects/visio.png", "caption": "Visio interface" }
+    ],
+    "tags": ["Flutter", "TFLite", "Object Detection", "EdTech"],
+    "category": "Mobile / AI",
+    "role": "Mobile Developer",
+    "timeline": "2024",
+    "status": "Live",
+    "featured": true,
+    "problem": "Inclusive education tools for blind children are scarce. Visio uses real-time object detection to turn a phone camera into a guided learning companion, narrating what the child encounters and reinforcing concepts through small games.",
+    "features": [
+      "On-device object detection with TFLite",
+      "Audio narration with adjustable pace",
+      "Mini-games that reinforce vocabulary and social cues",
+      "Parent dashboard for progress tracking"
+    ],
+    "techStack": [
+      { "name": "Flutter", "icon": "flutter" },
+      { "name": "TensorFlow Lite", "icon": "tensorflow" },
+      { "name": "Dart", "icon": "dart" }
+    ],
+    "learnings": [
+      "Optimising TFLite models for sustained real-time inference on phones.",
+      "Co-designing with educators to validate pedagogical effectiveness."
+    ],
+    "links": {}
+  },
+  {
+    "id": "tukerin",
+    "title": "Tukerin",
+    "tagline": "Battery-swap network for Indonesian EV riders",
+    "summary": "Tukerin helps Indonesian EV users locate nearby battery-swap stations and trigger instant swaps directly from the app.",
+    "cover": "projects/tukerin.png",
+    "gallery": [
+      { "src": "projects/tukerin.png", "caption": "Tukerin map view" }
+    ],
+    "tags": ["Flutter", "GCP", "Maps", "Mobility"],
+    "category": "Mobile",
+    "role": "Mobile Developer",
+    "timeline": "2023",
+    "status": "Live",
+    "featured": true,
+    "problem": "EV adoption in Indonesia is bottlenecked by long charging times and uneven charger distribution. Battery swapping is faster but requires coordinating availability across stations. Tukerin gives riders a real-time map of nearby stations and lets them reserve a charged battery before arrival.",
+    "features": [
+      "Live station availability on Google Maps",
+      "Reserve-before-arrival flow",
+      "Trip history & cost tracking",
+      "Cloud-hosted backend on GCP"
+    ],
+    "techStack": [
+      { "name": "Flutter", "icon": "flutter" },
+      { "name": "Google Cloud", "icon": "googlecloud" },
+      { "name": "Google Maps", "icon": "googlemaps" }
+    ],
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/document/10331276"
+    }
+  },
+  {
+    "id": "tanivest",
+    "title": "Tanivest",
+    "tagline": "Crowd-investing platform for Indonesian farmland",
+    "summary": "Tanivest connects investors with smallholder farmers, unlocking capital and modern tooling to keep farmland productive.",
+    "cover": "projects/tanivest.png",
+    "gallery": [
+      { "src": "projects/tanivest.png", "caption": "Tanivest dashboard" }
+    ],
+    "tags": ["Flutter", "Firebase", "FinTech", "AgriTech"],
+    "category": "Mobile",
+    "role": "Mobile Developer",
+    "timeline": "2023",
+    "status": "Archived",
+    "problem": "Indonesia loses thousands of hectares of farmland annually because smallholders lack capital and efficiency tools, pushing entrepreneurs toward more lucrative industries. Tanivest pools micro-investments to fund farm projects and shares yields back to investors.",
+    "features": [
+      "Browseable list of investable farm projects",
+      "Yield tracking & payout history",
+      "KYC + secure wallet on Firebase Auth/Firestore"
+    ],
+    "techStack": [
+      { "name": "Flutter", "icon": "flutter" },
+      { "name": "Firebase", "icon": "firebase" }
+    ],
+    "links": {}
+  },
+  {
+    "id": "infarm",
+    "title": "Infarm",
+    "tagline": "Marketplace for fair-priced farm inputs",
+    "summary": "An e-commerce platform that lets Indonesian farmers compare vendors and access fair prices on seeds, fertiliser, and equipment.",
+    "cover": "projects/infarm.png",
+    "gallery": [
+      { "src": "projects/infarm.png", "caption": "Infarm storefront" }
+    ],
+    "tags": ["Flutter", "Firebase", "E-commerce", "AgriTech"],
+    "category": "Mobile",
+    "role": "Mobile Developer",
+    "timeline": "2022",
+    "status": "Archived",
+    "problem": "Post-COVID supply disruptions left Indonesian farmers paying inflated prices for inputs with limited vendor choice. Infarm aggregates suppliers into a single marketplace where farmers can compare prices, read reviews, and order in bulk.",
+    "features": [
+      "Multi-vendor product catalogue",
+      "Cart & order tracking",
+      "Vendor onboarding portal"
+    ],
+    "techStack": [
+      { "name": "Flutter", "icon": "flutter" },
+      { "name": "Firebase", "icon": "firebase" }
+    ],
+    "links": {}
+  }
+]

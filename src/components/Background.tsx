@@ -140,6 +140,14 @@ export const Background = () => {
       if (node.y > height) node.y = 0;
     }
 
+    // Theme-aware palette
+    const lineRGB = isDark ? "160,170,190" : "80,90,120";
+    const cursorLineRGB = isDark ? "190,200,215" : "90,100,140";
+    const cursorPulseRGB = isDark ? "180,190,205" : "100,110,150";
+    const cursorDotRGB = isDark ? "210,220,235" : "60,70,110";
+    const nodeGlowRGB = isDark ? "200,210,225" : "100,110,150";
+    const nodeCoreRGB = isDark ? "220,230,240" : "80,90,130";
+
     // Draw connections (subtle neutral)
     const maxDist = 140; // link distance px
     for (let i = 0; i < nodes.length; i++) {
@@ -151,10 +159,8 @@ export const Background = () => {
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < maxDist) {
           const alpha = 1 - dist / maxDist;
-          // Base color: soft desaturated foreground-ish tone
-          ctx.strokeStyle = `rgba(160,170,190,${alpha * 0.25})`;
-          // Slightly thinner overall for subtlety
-          ctx.lineWidth = alpha * 1.6 + 0.4; // 0.4–1.2 px
+          ctx.strokeStyle = `rgba(${lineRGB},${alpha * 0.25})`;
+          ctx.lineWidth = alpha * 1.6 + 0.4;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
@@ -166,15 +172,15 @@ export const Background = () => {
     // Cursor connections
     if (cursorRef.current.active) {
       const { x: cx, y: cy } = cursorRef.current;
-      const cursorMax = 200; // distance threshold for cursor links
+      const cursorMax = 200;
       for (const node of nodes) {
         const dx = node.x - cx;
         const dy = node.y - cy;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < cursorMax) {
-          const alpha = 1 - dist / cursorMax; // fade with distance
-          const width = alpha * 2 + 0.3; // thinner than before
-          ctx.strokeStyle = `rgba(190,200,215,${alpha * 0.4})`;
+          const alpha = 1 - dist / cursorMax;
+          const width = alpha * 2 + 0.3;
+          ctx.strokeStyle = `rgba(${cursorLineRGB},${alpha * 0.4})`;
           ctx.lineWidth = width;
           ctx.beginPath();
           ctx.moveTo(cx, cy);
@@ -183,23 +189,15 @@ export const Background = () => {
         }
       }
 
-      // Optional cursor pulse (small glow) for context
       const pulseRadius = 14;
-      const grd = ctx.createRadialGradient(
-        cx,
-        cy,
-        0,
-        cx,
-        cy,
-        pulseRadius * 2.4
-      );
-      grd.addColorStop(0, "rgba(180,190,205,0.22)");
-      grd.addColorStop(1, "rgba(180,190,205,0)");
+      const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, pulseRadius * 2.4);
+      grd.addColorStop(0, `rgba(${cursorPulseRGB},0.22)`);
+      grd.addColorStop(1, `rgba(${cursorPulseRGB},0)`);
       ctx.fillStyle = grd;
       ctx.beginPath();
       ctx.arc(cx, cy, pulseRadius * 2.4, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = "rgba(210,220,235,0.65)";
+      ctx.fillStyle = `rgba(${cursorDotRGB},0.65)`;
       ctx.beginPath();
       ctx.arc(cx, cy, 2.2, 0, Math.PI * 2);
       ctx.fill();
@@ -207,7 +205,7 @@ export const Background = () => {
 
     // Draw nodes after lines for crisp glow overlay
     for (const node of nodes) {
-      const glowRadius = node.r * 3.5; // slightly smaller halo
+      const glowRadius = node.r * 3.5;
       const gradient = ctx.createRadialGradient(
         node.x,
         node.y,
@@ -216,13 +214,13 @@ export const Background = () => {
         node.y,
         glowRadius
       );
-      gradient.addColorStop(0, "rgba(200,210,225,0.55)");
-      gradient.addColorStop(1, "rgba(200,210,225,0)");
+      gradient.addColorStop(0, `rgba(${nodeGlowRGB},0.55)`);
+      gradient.addColorStop(1, `rgba(${nodeGlowRGB},0)`);
       ctx.fillStyle = gradient;
       ctx.beginPath();
       ctx.arc(node.x, node.y, glowRadius, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = "rgba(220,230,240,0.55)"; // core node
+      ctx.fillStyle = `rgba(${nodeCoreRGB},0.55)`;
       ctx.beginPath();
       ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
       ctx.fill();
@@ -230,7 +228,6 @@ export const Background = () => {
   };
 
   useEffect(() => {
-    if (!isDark) return; // skip drawing if not dark yet
     let raf: number;
     const loop = () => {
       draw();
@@ -241,27 +238,26 @@ export const Background = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodes, isDark]);
 
-  if (!isDark) return null;
-
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-      <canvas ref={canvasRef} className="absolute inset-0" />
-      {rainColumns.map((col) => (
-        <div
-          key={col.id}
-          className="meteor"
-          style={{
-            left: col.x + "%",
-            top: "-5%",
-            animationDelay: col.delay + "ms",
-            ["--fall-duration" as any]: col.duration + "s",
-          }}
-        >
-          {col.chars.map((c, i) => (
-            <span key={i}>{c}</span>
-          ))}
-        </div>
-      ))}
+      {isDark && <canvas ref={canvasRef} className="absolute inset-0" />}
+      {isDark &&
+        rainColumns.map((col) => (
+          <div
+            key={col.id}
+            className="meteor"
+            style={{
+              left: col.x + "%",
+              top: "-5%",
+              animationDelay: col.delay + "ms",
+              ["--fall-duration" as any]: col.duration + "s",
+            }}
+          >
+            {col.chars.map((c, i) => (
+              <span key={i}>{c}</span>
+            ))}
+          </div>
+        ))}
     </div>
   );
 };

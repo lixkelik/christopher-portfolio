@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Wrangler local secrets — never commit
+worker/.dev.vars
+worker/.wrangler/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

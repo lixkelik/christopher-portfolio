@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Christopher Portfolio</title>
     <script>
-      // Prevent rain/network from missing initial mount by setting dark early
+      // Apply stored theme early to avoid FOUC. Default = light.
       (function () {
         try {
           var stored = localStorage.getItem("theme");
           if (stored === "dark") {
             document.documentElement.classList.add("dark");
           } else if (!stored) {
-            // Default to dark first visit
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
+            // Default to light on first visit
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
           }
         } catch (e) {}
       })();

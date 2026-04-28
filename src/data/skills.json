@@ -1,0 +1,52 @@
+[
+  {
+    "id": "mobile-native",
+    "title": "Mobile · Native",
+    "icon": "smartphone",
+    "blurb": "Day-to-day stack at Traveloka.",
+    "skills": [
+      { "name": "Kotlin", "tier": "core" },
+      { "name": "Java", "tier": "core" },
+      { "name": "Jetpack Compose", "tier": "core" },
+      { "name": "XML Layouts", "tier": "core" },
+      { "name": "Swift", "tier": "learning" },
+      { "name": "SwiftUI", "tier": "learning" }
+    ]
+  },
+  {
+    "id": "cross-platform",
+    "title": "Cross-Platform",
+    "icon": "layers",
+    "blurb": "When speed-to-market matters.",
+    "skills": [
+      { "name": "React Native", "tier": "comfortable" },
+      { "name": "Flutter", "tier": "comfortable" },
+      { "name": "TypeScript", "tier": "comfortable" },
+      { "name": "Dart", "tier": "comfortable" }
+    ]
+  },
+  {
+    "id": "backend-cloud",
+    "title": "Backend & Cloud",
+    "icon": "cloud",
+    "blurb": "Shipped APIs and AI integrations.",
+    "skills": [
+      { "name": "Amazon Bedrock", "tier": "core" },
+      { "name": "AWS Lambda", "tier": "comfortable" },
+      { "name": "Node.js", "tier": "comfortable" },
+      { "name": "Firebase", "tier": "comfortable" }
+    ]
+  },
+  {
+    "id": "tooling",
+    "title": "Observability & Tooling",
+    "icon": "line-chart",
+    "blurb": "Keeping production healthy.",
+    "skills": [
+      { "name": "Datadog", "tier": "core" },
+      { "name": "Git", "tier": "core" },
+      { "name": "CI/CD", "tier": "comfortable" },
+      { "name": "Figma", "tier": "comfortable" }
+    ]
+  }
+]

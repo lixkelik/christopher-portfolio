@@ -17,15 +17,15 @@ export const ThemeToggle = () => {
     isStoredDarkMode()
   );
 
-  // On first mount, if no theme stored, default to dark
+  // On first mount, if no theme stored, default to light
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (!storedTheme) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDarkMode(true);
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
       window.dispatchEvent(
-        new CustomEvent("theme-changed", { detail: { theme: "dark" } })
+        new CustomEvent("theme-changed", { detail: { theme: "light" } })
       );
     }
   }, []);
@@ -50,15 +50,14 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed max-sm:hidden top-2 right-5 z-50 p-2 rounded-full transition-colors duration-300",
-        "focus:outline-hidden"
+        "p-2 rounded-full transition-colors duration-300 hover:bg-card focus:outline-hidden"
       )}
       aria-label="Toggle theme"
     >
       {isDarkMode ? (
-        <Sun className="h-6 w-6 text-yellow-300" />
+        <Sun className="h-5 w-5 text-yellow-300" />
       ) : (
-        <Moon className="h-6 w-6 text-blue-900" />
+        <Moon className="h-5 w-5 text-blue-900" />
       )}
     </button>
   );

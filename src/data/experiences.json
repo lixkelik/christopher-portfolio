@@ -1,0 +1,57 @@
+[
+  {
+    "id": "traveloka-ft",
+    "company": "Traveloka",
+    "role": "iOS & Android Engineer",
+    "type": "Full-time",
+    "location": "Jakarta, Indonesia",
+    "startDate": "2026-04",
+    "endDate": null,
+    "logo": "experience/traveloka.png",
+    "website": "https://www.traveloka.com",
+    "summary": "Building cross-platform native experiences across iOS (Swift) and Android (Kotlin) on the Financing PayLater team.",
+    "companyProfile": "Southeast Asia's largest travel and lifestyle super-app, serving 40M+ users across the region with flights, hotels, experiences, and financial services.",
+    "achievements": [
+      "Owning end-to-end features on iOS & Android in parallel.",
+      "Improving cold-start metrics on the PayLater flow."
+    ],
+    "techStack": ["Swift", "SwiftUI", "Kotlin", "Jetpack Compose", "Datadog"]
+  },
+  {
+    "id": "traveloka-intern",
+    "company": "Traveloka",
+    "role": "Android Engineer",
+    "type": "Internship",
+    "location": "Jakarta, Indonesia",
+    "startDate": "2025-03",
+    "endDate": "2026-03",
+    "logo": "experience/traveloka.png",
+    "website": "https://www.traveloka.com",
+    "summary": "Shipped Android features on the Financing PayLater team and contributed to an internal AI agent built on Amazon Bedrock.",
+    "companyProfile": "Southeast Asia's largest travel and lifestyle super-app, serving 40M+ users across the region with flights, hotels, experiences, and financial services.",
+    "achievements": [
+      "Delivered multiple PayLater features touching millions of monthly users.",
+      "Contributed to an internal AI agent using Amazon Bedrock.",
+      "Wrote production observability with Datadog."
+    ],
+    "techStack": ["Kotlin", "Java", "Jetpack Compose", "Amazon Bedrock", "Datadog"]
+  },
+  {
+    "id": "wings-intern",
+    "company": "Wings Group Indonesia",
+    "role": "Fullstack Engineer",
+    "type": "Internship",
+    "location": "Jakarta, Indonesia",
+    "startDate": "2024-02",
+    "endDate": "2025-02",
+    "logo": "experience/wings.png",
+    "website": "https://www.wingscorp.com",
+    "summary": "Built fullstack tooling supporting one of Indonesia's largest FMCG manufacturers.",
+    "companyProfile": "One of Indonesia's largest FMCG groups, producing household, food, and personal-care brands distributed across 18+ countries.",
+    "achievements": [
+      "Shipped internal fullstack utilities supporting operations.",
+      "Worked across frontend, backend, and database layers."
+    ],
+    "techStack": ["TypeScript", "Node.js", "React", "PostgreSQL"]
+  }
+]

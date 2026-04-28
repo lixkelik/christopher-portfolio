@@ -1,0 +1,47 @@
+{
+  "name": "Christopher Felix Atika",
+  "shortName": "Christopher",
+  "location": "Jakarta, Indonesia",
+  "headline": "Mobile Engineer crafting native iOS, Android, and cross-platform apps.",
+  "rotatingRoles": [
+    "Native Android Engineer",
+    "iOS Engineer",
+    "Flutter Developer",
+    "React Native Developer"
+  ],
+  "bio": "I build polished consumer apps end-to-end — from Kotlin & Swift on the metal to Flutter and React Native when speed matters. Currently shipping production iOS & Android at Traveloka.",
+  "availability": {
+    "status": "open",
+    "label": "Open to freelance & contract"
+  },
+  "stats": [
+    { "label": "Years building apps", "value": 3, "suffix": "+" },
+    { "label": "Apps shipped", "value": 8, "suffix": "" },
+    { "label": "Platforms", "value": 4, "suffix": "" }
+  ],
+  "social": [
+    { "label": "LinkedIn", "icon": "linkedin", "href": "https://linkedin.com/in/christopher-felix-atika" },
+    { "label": "GitHub", "icon": "github", "href": "https://github.com/lixkelik" },
+    { "label": "Email", "icon": "mail", "href": "mailto:christopherfelix.atika@gmail.com" }
+  ],
+  "techMarquee": [
+    "Kotlin",
+    "Java",
+    "Jetpack Compose",
+    "Swift",
+    "SwiftUI",
+    "Flutter",
+    "Dart",
+    "React Native",
+    "TypeScript",
+    "Firebase",
+    "AWS",
+    "Datadog"
+  ],
+  "resumeUrl": "https://drive.google.com/uc?export=download&id=18oyi_-kb_ztKQASrH00ROwzI657wL6hh",
+  "portfolioUrl": "https://drive.google.com/uc?export=download&id=1PfZIH7LfdmoMrBI5YUepp75lIH-J70wI",
+  "phone": "+62 8515-5100-892",
+  "timezone": "GMT+7 · Jakarta",
+  "calendarUrl": "",
+  "photo": "me.jpg"
+}
