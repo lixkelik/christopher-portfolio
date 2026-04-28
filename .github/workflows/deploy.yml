@@ -30,6 +30,7 @@ jobs:
       - run: npm run build
         env:
           VITE_AI_ENDPOINT: ${{ secrets.VITE_AI_ENDPOINT }}
+          VITE_BASE: /
 
       # SPA fallback so deep links (e.g. /projects/aura) survive a refresh
       - name: Copy index.html to 404.html
