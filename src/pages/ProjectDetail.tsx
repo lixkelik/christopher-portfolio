@@ -278,8 +278,24 @@ export const ProjectDetail = () => {
                 {project.techStack.map((t) => (
                   <span
                     key={t.name}
-                    className="px-3 py-1.5 text-sm border rounded-full bg-card/60"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm border rounded-full bg-card/60"
                   >
+                    {t.icon && (
+                      <img
+                        src={`https://cdn.simpleicons.org/${t.icon}`}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        width={14}
+                        height={14}
+                        className="h-3.5 w-3.5 object-contain"
+                        onError={(e) => {
+                          // Hide silently if Simple Icons doesn't have the slug
+                          (e.currentTarget as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                    )}
                     {t.name}
                   </span>
                 ))}

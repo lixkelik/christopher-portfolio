@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]): string {
 /**
  * Resolve a public asset path to a URL that works under any Vite `base`.
  *
- * Accepts paths like "projects/aura.png" or "/projects/aura.png" and
+ * Accepts paths like "projects/aura.webp" or "/projects/aura.png" and
  * prefixes Vite's BASE_URL so deployments under a sub-path
  * (e.g. GitHub Pages /christopher-portfolio/) keep working.
  */

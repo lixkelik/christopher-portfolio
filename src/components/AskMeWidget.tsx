@@ -13,7 +13,7 @@ const SUGGESTIONS = [
   "Is he open to new roles right now?",
 ];
 
-const MAX_INPUT_CHARS = 250;
+const MAX_INPUT_CHARS = 200;
 // Anti-spam guards (client-side; the worker enforces hard limits per IP).
 const MIN_SEND_INTERVAL_MS = 1500; // wait at least this long between sends
 const MAX_USER_MESSAGES_PER_SESSION = 20;
@@ -44,16 +44,17 @@ export const AskMeWidget = () => {
   const [typingIndex, setTypingIndex] = useState<number>(-1);
   // Bumped on reset so the empty-state block re-mounts and re-animates.
   const [resetKey, setResetKey] = useState(0);
-  // Whether the user has ever opened/hovered the assistant. Drives attract
-  // animation + tooltip on the floating button.
-  const [seen, setSeen] = useState<boolean>(() => {
-    if (typeof window === "undefined") return true;
+  // Whether the user has ever opened/hovered the assistant.
+  // `seenWobble` persists across refreshes (stops the wobble permanently).
+  // `seenTooltip` is in-memory only (tooltip reappears every refresh).
+  const [seenWobble, setSeenWobble] = useState<boolean>(() => {
     try {
       return localStorage.getItem(SEEN_KEY) === "1";
     } catch {
-      return true;
+      return false;
     }
   });
+  const [seenTooltip, setSeenTooltip] = useState(false);
   // Once the user has clicked the hero CTA the floating launcher becomes
   // visible for the rest of the session (in-memory only — a refresh resets
   // back to the hero CTA being shown again).
@@ -89,11 +90,6 @@ export const AskMeWidget = () => {
       behavior: "smooth",
     });
   }, [messages, pending]);
-
-  // Focus input when opening
-  useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 200);
-  }, [open]);
 
   // Esc closes
   useEffect(() => {
@@ -152,12 +148,12 @@ export const AskMeWidget = () => {
     return () => window.clearTimeout(id);
   }, [heroVisible]);
 
-  // Trigger attract tooltip after delay, only if the user hasn't seen it.
+  // Trigger attract tooltip after delay, only if the user hasn't dismissed it.
   useEffect(() => {
-    if (seen) return;
+    if (seenTooltip) return;
     const id = window.setTimeout(() => setShowAttract(true), ATTRACT_DELAY_MS);
     return () => window.clearTimeout(id);
-  }, [seen]);
+  }, [seenTooltip]);
 
   // Auto-dismiss attract tooltip after a while so it doesn't stay forever.
   useEffect(() => {
@@ -167,12 +163,15 @@ export const AskMeWidget = () => {
   }, [showAttract]);
 
   const markSeen = () => {
-    setSeen(true);
+    setSeenTooltip(true);
     setShowAttract(false);
-    try {
-      localStorage.setItem(SEEN_KEY, "1");
-    } catch {
-      /* ignore */
+    if (!seenWobble) {
+      setSeenWobble(true);
+      try {
+        localStorage.setItem(SEEN_KEY, "1");
+      } catch {
+        /* ignore */
+      }
     }
   };
 
@@ -264,7 +263,7 @@ export const AskMeWidget = () => {
           <FloatingLauncher
             key="floating"
             open={open}
-            attract={!seen}
+            attract={!seenWobble}
             showTooltip={showAttract && !open}
             flyFrom={flyFrom}
             onFlyComplete={() => setFlyFrom(null)}

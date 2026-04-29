@@ -1,0 +1,105 @@
+[
+  {
+    "id": "apicta-2024-indonesia-delegation",
+    "title": "Indonesia Delegation - Apicta 2024",
+    "issuer": "APICTA (Asia Pacific ICT Alliance Awards)",
+    "year": 2024,
+    "category": "Competition",
+    "summary": "One of Indonesia's representatives at the APICTA 2024 held in Brunei Darussalam to bring our assistive apps for visually impaired people.",
+    "tags": ["Tensorflow", "Competition", "International"],
+    "images": [
+      { "src": "achievements/apicta/cert-apicta-2024.webp", "caption": "Certificate of Participation" }
+    ]
+  },
+  {
+    "id": "gemastik-2024-software-development",
+    "title": "3rd Place - GEMASTIK XVII 2024 Software Development",
+    "issuer": "Balai Pengembangan Talenta Indonesia",
+    "year": 2024,
+    "category": "Competition",
+    "summary": "Won third place in Indonesia's largest national student ICT competition, beating 600+ teams to help visually blind people understand and choose their clothing for everyday uses with.",
+    "tags": ["Tensorflow", "Competition", "National"],
+    "images": [
+      { "src": "achievements/gemastik/cert-gemastik-2024.webp", "caption": "Certificate of 3rd Place" },
+      { "src": "achievements/gemastik/gemastik-awarding-day-1.webp", "caption": "Awarding Day On Stage" },
+      { "src": "achievements/gemastik/gemastik-awarding-day-2.webp", "caption": "Awarding Day On Stage" },
+      { "src": "achievements/gemastik/gemastik-awarding-day-3.webp", "caption": "My Team" }
+    ]
+  },
+  {
+    "id": "microsoft-ai4a-hackathon-2024-1st-place",
+    "title": "1st Place - Microsoft AI4A Hackathon 2024",
+    "issuer": "Microsoft",
+    "year": 2024,
+    "category": "Competition",
+    "summary": "We achieve 1st place in a team of two at Microsoft AI4A Hackathon 2024. This competition was held by Microsoft each year in Asia Pacific for students to solve a problem and build solutions to achieve a more accessible and inclusive society.\nMy team and I empower Microsoft AI services such as Azure Image Analyzer, Azure Custom Model, and Azure Blob Container to store our datasets.\nReally honoured that our ideas are judged by the CFO of Microsoft Indonesia, Founder of Suarise, and one of the professors from Binus University.",
+    "tags": ["Competition", "Mobile", "Accessibility", "AI"],
+    "images": [
+      { "src": "achievements/microsoft-ai4a/cert-microsoftai4a-2024.webp", "caption": "Certificate of 1st Place" },
+      { "src": "achievements/microsoft-ai4a/microsoftai4a-awarding-day.webp", "caption": "Awarding Day" }
+    ]
+  },
+  {
+    "id": "iitc-grab-2023-1st-place",
+    "title": "1st Place - IITC x Grab Mobile App Competition",
+    "issuer": "Intermedia Amikom Purwokerto",
+    "year": 2023,
+    "category": "Competition",
+    "summary": "My partner and I created Tac Tile and achieved first place in this competition. Tac Tile is an mobile app for children to explore and learn about object using tactile method collaboratively with friend.",
+    "tags": ["Competition", "Mobile", "Education"],
+    "images": [
+      { "src": "achievements/iitc-grab/cert-iitc-grab-2023.webp", "caption": "Certificate of 1st Place" }
+    ]
+  },
+  {
+    "id": "wings-scholarship-awardee",
+    "title": "Wings Scholarship Awardee",
+    "issuer": "Wings Group Indonesia",
+    "year": 2023,
+    "category": "Scholarship",
+    "summary": "Full tuition fee coverage from semester 5 to 8 and WINGS product provided on quarterly basis.",
+    "tags": ["Scholarship", "Academic"],
+    "images": [
+      { "src": "achievements/wings-scholarship/cert-wings-scholarship.webp", "caption": "Wings Scholarship Certificate" },
+      { "src": "achievements/wings-scholarship/wings-awarding-day.webp", "caption": "Wings Scholarship Awarding Day" }
+    ]
+  },
+  {
+    "id": "unity-2023-top-4-finalist",
+    "title": "Top 4 Finalist - Mobile Development Unity #11",
+    "issuer": "Universitas Negeri Yogyakarta",
+    "year": 2023,
+    "category": "Competition",
+    "summary": "Creating seekers an app with object detection for blind children.",
+    "tags": ["Hackathon", "Mobile", "UX", "Accessibility"],
+    "images": [
+      { "src": "achievements/unity/cert-unity-2023.webp", "caption": "Certificate of Top 4 Finalist" }
+    ]
+  },
+  {
+    "id": "invfest-2023-1st-place",
+    "title": "1st Place - INVFEST 7.0 Mobile Application",
+    "issuer": "HMIF IT Telkom Purwokerto",
+    "year": 2023,
+    "category": "Competition",
+    "summary": "We created an app called Infarm to help Indonesian farmers make farm inputs easily accessible. Infarm is an e-commerce-style application.",
+    "tags": ["Competition", "Mobile", "Innovation", "Hackathon", "Agritech"],
+    "images": [
+      { "src": "achievements/invfest7-0/cert-invfest-2023.webp", "caption": "1st Place Certificate" }
+    ]
+  },
+  {
+    "id": "techfest-2022-2nd-place",
+    "title": "2nd Place - Techfest 2022 Mobile Development",
+    "issuer": "HIMTI Binus University",
+    "year": 2022,
+    "category": "Competition",
+    "summary": "My team and I created an app called Swaptry. Swaptry is an app to make EV Battery Swap Stations (BSS) reachable and growable. Swaptry can find nearby BSS and show the navigation using the Google API.",
+    "tags": ["Competition", "Mobile", "Innovation"],
+    "images": [
+      { "src": "achievements/techfest/cert-techfest-2022.webp", "caption": "2nd Place Certificate" }
+    ]
+  }
+]
+
+

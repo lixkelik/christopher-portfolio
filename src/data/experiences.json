@@ -4,16 +4,18 @@
     "company": "Traveloka",
     "role": "iOS & Android Engineer",
     "type": "Full-time",
-    "location": "Jakarta, Indonesia",
-    "startDate": "2026-04",
+    "location": "Tangerang, Indonesia",
+    "startDate": "2026-03",
     "endDate": null,
-    "logo": "experience/traveloka.png",
+    "logo": "experience/traveloka.webp",
     "website": "https://www.traveloka.com",
-    "summary": "Building cross-platform native experiences across iOS (Swift) and Android (Kotlin) on the Financing PayLater team.",
-    "companyProfile": "Southeast Asia's largest travel and lifestyle super-app, serving 40M+ users across the region with flights, hotels, experiences, and financial services.",
+    "summary": "Building Traveloka native application across iOS (Swift) and Android (Kotlin) on the Financing PayLater team. On the other hand, creating internal crossplatform apps using React Native.",
+    "companyProfile": "Southeast Asia's largest travel and lifestyle super-app, serving 40M+ monthly active users across the region with flights, hotels, experiences, and financial services.",
     "achievements": [
-      "Owning end-to-end features on iOS & Android in parallel.",
-      "Improving cold-start metrics on the PayLater flow."
+      "Part of uploading internal application to the Private Play Store",
+      "PIC for revamping the TPayLater homepage.",
+      "PIC to implement Backend driven Deeplink navigation for Pay Later module.",
+      "Created on-premise network mocking tool, cutting Proxyman paid license for whole Traveloka Android and iOS Engineer."
     ],
     "techStack": ["Swift", "SwiftUI", "Kotlin", "Jetpack Compose", "Datadog"]
   },
@@ -25,16 +27,17 @@
     "location": "Jakarta, Indonesia",
     "startDate": "2025-03",
     "endDate": "2026-03",
-    "logo": "experience/traveloka.png",
+    "logo": "experience/traveloka.webp",
     "website": "https://www.traveloka.com",
     "summary": "Shipped Android features on the Financing PayLater team and contributed to an internal AI agent built on Amazon Bedrock.",
     "companyProfile": "Southeast Asia's largest travel and lifestyle super-app, serving 40M+ users across the region with flights, hotels, experiences, and financial services.",
     "achievements": [
-      "Delivered multiple PayLater features touching millions of monthly users.",
-      "Contributed to an internal AI agent using Amazon Bedrock.",
-      "Wrote production observability with Datadog."
+      "Developed native Android using Kotlin for Financing departement (Pay Later) at Traveloka with MVVM architecture and Maestro platform for UI test.",
+      "Successfully improve internal apps stability by reducing crash occurence from 200 crash daily to 0.",
+      "Created AI Agent with Amazon Bedrock (Strands) and Lark Any Cross for the first on-call responder and issues triaging equipped the agent with multiple tools.",
+      "Implemented In-App auto update mechanism for internal collection application."
     ],
-    "techStack": ["Kotlin", "Java", "Jetpack Compose", "Amazon Bedrock", "Datadog"]
+    "techStack": ["Kotlin", "Java", "Jetpack Compose", "Amazon Bedrock", "Strands", "Datadog"]
   },
   {
     "id": "wings-intern",
@@ -44,14 +47,17 @@
     "location": "Jakarta, Indonesia",
     "startDate": "2024-02",
     "endDate": "2025-02",
-    "logo": "experience/wings.png",
+    "logo": "experience/wings.webp",
     "website": "https://www.wingscorp.com",
-    "summary": "Built fullstack tooling supporting one of Indonesia's largest FMCG manufacturers.",
-    "companyProfile": "One of Indonesia's largest FMCG groups, producing household, food, and personal-care brands distributed across 18+ countries.",
+    "summary": "Built fullstack mobile application for Wings manufacturer and warehousing, integrating several hardware into application such as RFID scanners.",
+    "companyProfile": "One of Indonesia's largest FMCG groups in Indonesia, producing household, food, and personal-care brands distributed across 18+ countries.",
     "achievements": [
-      "Shipped internal fullstack utilities supporting operations.",
-      "Worked across frontend, backend, and database layers."
+      "Developed native Java Android mobile apps for warehouse and manufacturing processes.",
+      "Designed scalable APIs with Glassfish and Payara for on-premises systems.",
+      "Implement architectural migration by migrating to MVVM and implementing Clean Architecture principles.",
+      "Created a reusable system design, reducing UI development time costs by 35%.",
+      "Led the Inbound Strategy project, integrating RFID Scanner that boost warehouse efficiency."
     ],
-    "techStack": ["TypeScript", "Node.js", "React", "PostgreSQL"]
+    "techStack": ["Java", "XML View", "Android", "Glassfish", "Payara", "PostgreSQL"]
   }
 ]

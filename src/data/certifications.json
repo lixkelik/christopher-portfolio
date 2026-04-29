@@ -1,0 +1,56 @@
+[
+  {
+    "id": "introduction-to-agent-skills",
+    "title": "Certificate of completion: Introduction to agent skills",
+    "issuer": "Anthropic",
+    "year": 2026,
+    "image": "certifications/cert-introduction-to-agent-skills.webp",
+    "credentialUrl": "https://verify.skilljar.com/c/6rzfii5ddy6q",
+    "tags": ["Agent Skills", "AI", "Claude"]
+  },
+  {
+    "id": "claude-fluency-framework-foundations",
+    "title": "Certificate of Completion: AI Fluency Framework & Foundations",
+    "issuer": "Anthropic",
+    "year": 2026,
+    "image": "certifications/cert-ai-fluency.webp",
+    "credentialUrl": "https://verify.skilljar.com/c/tba9jnjywmu6",
+    "tags": ["AI", "Prompt Engineering", "Claude"]
+  },
+  {
+    "id": "claude-101",
+    "title": "Certificate of completion: Claude 101",
+    "issuer": "Anthropic",
+    "year": 2026,
+    "image": "certifications/cert-claude101.webp",
+    "credentialUrl": "https://verify.skilljar.com/c/wykf76gdkcoe",
+    "tags": ["AI", "Claude"]
+  },
+  {
+    "id": "belajar-dasar-pemrograman-javascript",
+    "title": "Belajar Dasar Pemrograman JavaScript",
+    "issuer": "Dicoding Indonesia",
+    "year": 2024,
+    "image": "certifications/cert-belajar-dasar-pemrograman-javascript.webp",
+    "credentialUrl": "https://www.dicoding.com/certificates/MRZMEG12RPYQ",
+    "tags": ["JavaScript", "Programming"]
+  },
+  {
+    "id": "dicoding-aws-cloud-practitioner",
+    "title": "Cloud Practitioner Essentials (Belajar Dasar AWS Cloud)",
+    "issuer": "Dicoding Indonesia",
+    "year": 2023,
+    "image": "certifications/cert-dicoding-aws-dasar.webp",
+    "credentialUrl": "https://www.dicoding.com/certificates/ERZR15DLQZYV",
+    "tags": ["AWS", "Cloud"]
+  },
+  {
+    "id": "foundations-data-data-everywhere",
+    "title": "Foundations: Data, Data, Everywhere",
+    "issuer": "Google Careers",
+    "year": 2022,
+    "image": "certifications/cert-foundations-data-data-everywhere.webp",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/certificate/XQ9KABCE4AQ5",
+    "tags": ["Data Analytics", "Google"]
+  }
+]

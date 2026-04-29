@@ -4,9 +4,9 @@
     "title": "Aura",
     "tagline": "AI-powered outfit assistant for the visually impaired",
     "summary": "An assistive app that helps blind users pick outfits matching the occasion, powered by a custom-built AI model and RFID tags.",
-    "cover": "projects/aura.png",
+    "cover": "projects/aura.webp",
     "gallery": [
-      { "src": "projects/aura.png", "caption": "App cover" }
+      { "src": "projects/aura.webp", "caption": "App cover" }
     ],
     "tags": ["Flutter", "TensorFlow", "RFID", "Accessibility"],
     "category": "Mobile / AI",
@@ -43,9 +43,9 @@
     "title": "Visio",
     "tagline": "Gamified learning for visually-impaired children",
     "summary": "A playful, audio-first learning app that helps blind children grasp object meanings and social interactions through gamified lessons.",
-    "cover": "projects/visio.png",
+    "cover": "projects/visio.webp",
     "gallery": [
-      { "src": "projects/visio.png", "caption": "Visio interface" }
+      { "src": "projects/visio.webp", "caption": "Visio interface" }
     ],
     "tags": ["Flutter", "TFLite", "Object Detection", "EdTech"],
     "category": "Mobile / AI",
@@ -76,9 +76,9 @@
     "title": "Tukerin",
     "tagline": "Battery-swap network for Indonesian EV riders",
     "summary": "Tukerin helps Indonesian EV users locate nearby battery-swap stations and trigger instant swaps directly from the app.",
-    "cover": "projects/tukerin.png",
+    "cover": "projects/tukerin.webp",
     "gallery": [
-      { "src": "projects/tukerin.png", "caption": "Tukerin map view" }
+      { "src": "projects/tukerin.webp", "caption": "Tukerin map view" }
     ],
     "tags": ["Flutter", "GCP", "Maps", "Mobility"],
     "category": "Mobile",
@@ -107,9 +107,9 @@
     "title": "Tanivest",
     "tagline": "Crowd-investing platform for Indonesian farmland",
     "summary": "Tanivest connects investors with smallholder farmers, unlocking capital and modern tooling to keep farmland productive.",
-    "cover": "projects/tanivest.png",
+    "cover": "projects/tanivest.webp",
     "gallery": [
-      { "src": "projects/tanivest.png", "caption": "Tanivest dashboard" }
+      { "src": "projects/tanivest.webp", "caption": "Tanivest dashboard" }
     ],
     "tags": ["Flutter", "Firebase", "FinTech", "AgriTech"],
     "category": "Mobile",
@@ -133,9 +133,9 @@
     "title": "Infarm",
     "tagline": "Marketplace for fair-priced farm inputs",
     "summary": "An e-commerce platform that lets Indonesian farmers compare vendors and access fair prices on seeds, fertiliser, and equipment.",
-    "cover": "projects/infarm.png",
+    "cover": "projects/infarm.webp",
     "gallery": [
-      { "src": "projects/infarm.png", "caption": "Infarm storefront" }
+      { "src": "projects/infarm.webp", "caption": "Infarm storefront" }
     ],
     "tags": ["Flutter", "Firebase", "E-commerce", "AgriTech"],
     "category": "Mobile",

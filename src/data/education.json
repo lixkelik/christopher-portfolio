@@ -1,0 +1,26 @@
+{
+  "school": "BINUS University",
+  "shortName": "BINUS",
+  "degree": "Bachelor of Computer Science",
+  "major": "Computer Science",
+  "startYear": 2021,
+  "endYear": 2025,
+  "honors": "Summa Cum Laude",
+  "gpa": 3.95,
+  "gpaScale": 4.0,
+  "logo": "education/binus-logo.png",
+  "certificate": {
+    "image": "education/summa-cum-laude.webp",
+    "caption": "Summa Cum Laude Certificate"
+  },
+  "publication": {
+    "title": "Tukerin: Battery Exchange for Electric Motorcycles",
+    "venue": "IEEE",
+    "url": "https://ieeexplore.ieee.org/document/10331276"
+  },
+  "highlights": [
+    "Graduated Summa Cum Laude (top of cohort)",
+    "Published research paper on IEEE",
+    "Multiple national & international ICT competition wins"
+  ]
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { ExternalLink, MapPin } from "lucide-react";
+import { ExternalLink, Flag, MapPin } from "lucide-react";
 import { durationLabel, experiences, formatRange } from "../data/profile";
 import type { Experience } from "../data/profile";
 import { assetUrl, cn } from "../lib/utils";
@@ -19,13 +19,51 @@ export const ExperienceSection = () => {
           </p>
         </div>
 
-        <ol className="relative border-l-2 border-border ml-3 md:ml-6 space-y-10">
+        {/* The line is a pseudo-element bounded by `before:top` / `before:bottom`
+            so it terminates cleanly at the Now cap (top) and Since flag (bottom),
+            instead of using `border-l` which would always span the full ol. */}
+        <ol className="relative ml-3 md:ml-6 space-y-10 before:content-[''] before:absolute before:-left-0.5 before:top-5 before:bottom-5 before:w-0.5 before:bg-border">
           {experiences.map((exp, i) => (
             <TimelineItem key={exp.id} exp={exp} index={i} />
           ))}
+          {/* Animated start-of-journey flag at the BOTTOM of the line
+              (list runs newest → oldest, so the bottom is where it began). */}
+          <TimelineStart />
         </ol>
       </div>
     </section>
+  );
+};
+
+const TimelineStart = () => {
+  // Year of the earliest experience — falls back to current year.
+  const earliestYear = experiences.length
+    ? new Date(
+        experiences[experiences.length - 1].startDate
+      ).getFullYear()
+    : new Date().getFullYear();
+
+  return (
+    <li
+      aria-hidden="true"
+      className="relative mt-6 flex items-center gap-2 select-none -ml-[15px]"
+    >
+      {/* Pole base — solid bg covers where the timeline line meets it */}
+      <span className="relative grid place-items-center h-7 w-7 rounded-full bg-background ring-2 ring-primary/50">
+        <span className="absolute inset-0 rounded-full bg-primary/25 animate-ping opacity-70" />
+        <motion.div
+          initial={{ rotate: -8 }}
+          animate={{ rotate: [-8, 8, -8] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          className="relative origin-bottom-left text-primary"
+        >
+          <Flag size={14} fill="currentColor" strokeWidth={1.5} />
+        </motion.div>
+      </span>
+      <span className="text-[11px] font-semibold uppercase tracking-wider text-primary/80">
+        Since {earliestYear}
+      </span>
+    </li>
   );
 };
 

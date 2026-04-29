@@ -1,8 +1,14 @@
 # Local-only secrets and vars for `wrangler dev`. Copy to `.dev.vars` and fill
 # in. NEVER paste real keys into this example file — it's committed to git.
 #
-# Get a Groq key at https://console.groq.com/keys
+# Providers are tried in order; only GROQ_API_KEY is required. Cerebras and
+# Cloudflare Workers AI act as automatic fallbacks if Groq is rate-limited or
+# down. Cloudflare Workers AI needs no key (uses the [ai] binding).
+#
+# Groq:     https://console.groq.com/keys
+# Cerebras: https://cloud.cerebras.ai/  (optional but recommended)
 GROQ_API_KEY=
+CEREBRAS_API_KEY=
 
 # Override ALLOWED_ORIGIN locally so the dev worker accepts your Vite dev
 # server. Production keeps the strict value from wrangler.toml.

@@ -12,10 +12,10 @@
   "bio": "I build polished consumer apps end-to-end — from Kotlin & Swift on the metal to Flutter and React Native when speed matters. Currently shipping production iOS & Android at Traveloka.",
   "availability": {
     "status": "open",
-    "label": "Open to freelance & contract"
+    "label": "Open to any exciting opportunities"
   },
   "stats": [
-    { "label": "Years building apps", "value": 3, "suffix": "+" },
+    { "label": "Years building apps", "value": 4, "suffix": "+" },
     { "label": "Apps shipped", "value": 8, "suffix": "" },
     { "label": "Platforms", "value": 4, "suffix": "" }
   ],
@@ -30,6 +30,8 @@
     "Jetpack Compose",
     "Swift",
     "SwiftUI",
+    "AWS Agentcore",
+    "Strands",
     "Flutter",
     "Dart",
     "React Native",

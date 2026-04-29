@@ -310,3 +310,12 @@
   margin: 0 auto;
   padding: 0;
 }
+
+/* Hide scrollbars on horizontally-scrollable carousels (Certifications). */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,89 @@
+{
+  "categories": [
+    {
+      "id": "ide",
+      "label": "IDE & Editors",
+      "items": [
+        { "name": "Xcode", "icon": "xcode" },
+        { "name": "Android Studio", "icon": "androidstudio" },
+        {
+          "name": "VS Code",
+          "icon": "",
+          "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "label": "Design & Prototyping",
+      "items": [
+        { "name": "Figma", "icon": "figma" }
+      ]
+    },
+    {
+      "id": "languages",
+      "label": "Languages",
+      "items": [
+        { "name": "Swift", "icon": "swift" },
+        { "name": "Kotlin", "icon": "kotlin" },
+        { "name": "Dart", "icon": "dart" },
+        { "name": "TypeScript", "icon": "typescript" },
+        {
+          "name": "Java",
+          "icon": "",
+          "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+        }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "label": "Mobile Frameworks",
+      "items": [
+        { "name": "SwiftUI", "icon": "swift" },
+        { "name": "Jetpack Compose", "icon": "jetpackcompose" },
+        { "name": "Flutter", "icon": "flutter" },
+        { "name": "React Native", "icon": "react" }
+      ]
+    },
+    {
+      "id": "testing",
+      "label": "Testing",
+      "items": [
+        { "name": "XCTest", "icon": "swift" },
+        { "name": "Espresso", "icon": "android" },
+        { "name": "Jest", "icon": "jest" }
+      ]
+    },
+    {
+      "id": "ci",
+      "label": "CI/CD & Tooling",
+      "items": [
+        { "name": "GitHub Actions", "icon": "githubactions" },
+        { "name": "Fastlane", "icon": "fastlane" },
+        { "name": "Git", "icon": "git" }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "label": "Monitoring & Analytics",
+      "items": [
+        { "name": "Datadog", "icon": "datadog" },
+        { "name": "Firebase", "icon": "firebase" },
+        { "name": "Sentry", "icon": "sentry" }
+      ]
+    },
+    {
+      "id": "cloud",
+      "label": "Cloud & Backend",
+      "items": [
+        {
+          "name": "AWS",
+          "icon": "",
+          "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+        },
+        { "name": "Cloudflare", "icon": "cloudflare" },
+        { "name": "Google Cloud", "icon": "googlecloud" }
+      ]
+    }
+  ]
+}

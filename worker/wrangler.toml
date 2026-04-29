@@ -2,11 +2,29 @@ name = "christopheratika"
 main = "src/index.ts"
 compatibility_date = "2024-09-01"
 
-# Set GROQ_API_KEY as a secret:
-#   wrangler secret put GROQ_API_KEY
+# Secrets (set via `wrangler secret put <NAME>`):
+#   GROQ_API_KEY      — required, primary provider
+#   CEREBRAS_API_KEY  — optional, fallback if Groq is rate-limited / down
 #
-# Set ALLOWED_ORIGIN as an environment variable in this file
-# (your portfolio URL — restricts who can call your worker).
+# Cloudflare Workers AI is the final fallback and uses the [ai] binding
+# below — no API key needed (10k neurons/day on the Workers free plan).
+
+[ai]
+binding = "AI"
+
+# D1 database for conversation logging. Create once with:
+#   npx wrangler d1 create portfolio-logs
+# then copy the printed `database_id` into the value below and run:
+#   npx wrangler d1 migrations apply portfolio-logs
+[[d1_databases]]
+binding = "LOGS"
+database_name = "portfolio-logs"
+database_id = "8835981a-f2ca-4ed2-87fc-960b69e328b4"
+migrations_dir = "migrations"
+
 [vars]
 ALLOWED_ORIGIN = "https://christopheratika.site,https://www.christopheratika.site"
+# Models (override per provider). Leave defaults unless you have a reason.
 GROQ_MODEL = "llama-3.3-70b-versatile"
+CEREBRAS_MODEL = "llama3.1-8b"
+CF_AI_MODEL = "@cf/google/gemma-4-26b-a4b-it"

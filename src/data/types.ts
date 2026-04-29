@@ -36,7 +36,7 @@ export type Project = {
   tagline: string;
   /** 1–2 sentence blurb shown on the card. */
   summary: string;
-  /** Card cover image (path relative to /public, e.g. "projects/aura.png"). */
+  /** Card cover image (path relative to /public, e.g. "projects/aura.webp"). */
   cover: string;
   /** Detail page gallery. Include the cover here too if you want it in the gallery. */
   gallery: GalleryImage[];
