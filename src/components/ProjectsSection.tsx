@@ -92,6 +92,7 @@ export const ProjectsSection = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by title, tag, or keyword…"
+              aria-label="Search projects"
               className="w-full pl-9 pr-9 py-2 rounded-full border border-border bg-card/40 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
             />
             {query && (

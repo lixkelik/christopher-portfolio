@@ -375,7 +375,7 @@ const Avatar = ({ src, initials }: { src?: string; initials: string }) => {
         {src && !errored ? (
           <img
             src={src}
-            alt="Profile"
+            alt=""
             onError={() => setErrored(true)}
             className="h-full w-full object-cover"
           />

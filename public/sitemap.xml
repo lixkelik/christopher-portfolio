@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  When you add a new project to src/data/projects.json,
+  add a matching <url> entry below so search engines discover it.
+  Format:
+    <url>
+      <loc>https://christopheratika.site/projects/YOUR_PROJECT_ID</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://christopheratika.site/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://christopheratika.site/projects/aura</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://christopheratika.site/projects/visio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://christopheratika.site/projects/tukerin</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://christopheratika.site/projects/tanivest</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://christopheratika.site/projects/infarm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

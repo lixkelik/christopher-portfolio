@@ -52,7 +52,8 @@ export const ThemeToggle = () => {
       className={cn(
         "p-2 rounded-full transition-colors duration-300 hover:bg-card focus:outline-hidden"
       )}
-      aria-label="Toggle theme"
+      aria-label={isDarkMode ? "Switch to light theme" : "Switch to dark theme"}
+      aria-pressed={isDarkMode}
     >
       {isDarkMode ? (
         <Sun className="h-5 w-5 text-yellow-300" />

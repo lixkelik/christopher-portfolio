@@ -9,9 +9,10 @@ export const Footer = () => {
       </p>
       <a
         href="#hero"
+        aria-label="Back to top"
         className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
       >
-        <ArrowUp size={20} />
+        <ArrowUp size={20} aria-hidden="true" />
       </a>
     </footer>
   );

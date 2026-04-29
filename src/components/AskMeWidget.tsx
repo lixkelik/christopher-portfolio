@@ -288,6 +288,7 @@ export const AskMeWidget = () => {
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="fixed bottom-24 right-4 left-4 sm:left-auto sm:right-5 z-40 w-auto sm:w-[380px] max-h-[78vh] flex flex-col rounded-2xl border border-border bg-card/95 backdrop-blur-md shadow-2xl overflow-hidden"
             role="dialog"
+            aria-modal="true"
             aria-label="AI assistant chat"
           >
             {/* Header */}
@@ -300,7 +301,7 @@ export const AskMeWidget = () => {
                   Ask about Christopher
                 </p>
                 <p className="text-[11px] text-foreground/55">
-                  Llama 3.3 via Groq
+                  Llama 3.3
                 </p>
               </div>
               {messages.length > 0 && (
@@ -450,6 +451,7 @@ export const AskMeWidget = () => {
                   setInput(e.target.value.slice(0, MAX_INPUT_CHARS))
                 }
                 placeholder="Ask anything about Christopher…"
+                aria-label="Message"
                 maxLength={MAX_INPUT_CHARS}
                 disabled={pending}
                 className="flex-1 min-w-0 bg-transparent text-sm focus:outline-none placeholder:text-foreground/40"
