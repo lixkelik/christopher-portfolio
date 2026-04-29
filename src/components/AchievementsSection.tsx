@@ -285,6 +285,12 @@ const CoverCard = ({
   const opacity = !visible ? 0 : isActive ? 1 : abs === 1 ? 0.65 : 0.3;
   const x = offset * spacing;
 
+  // Card size is 260px on mobile (<sm) and 320px on desktop.
+  // spacing already tracks the breakpoint, so derive card width from it.
+  const isMobile = spacing === SPACING_MOBILE;
+  const cardW = isMobile ? 260 : 320;
+  const cardH = cardW * 3 / 4; // aspect-[4/3]
+
   return (
     <motion.button
       type="button"
@@ -308,8 +314,8 @@ const CoverCard = ({
         transformStyle: "preserve-3d",
         zIndex,
         // Pull the layout origin to the centre of the row.
-        marginLeft: "-160px",
-        marginTop: "-120px",
+        marginLeft: -(cardW / 2),
+        marginTop: -(cardH / 2),
       }}
       animate={{
         x,
