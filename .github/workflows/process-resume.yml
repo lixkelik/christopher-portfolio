@@ -1,11 +1,19 @@
 name: Process Resume / Portfolio Upload
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "public/resume/cv.pdf"
-      - "public/resume/portfolio.pdf"
+  workflow_dispatch:
+    inputs:
+      file_type:
+        description: "Which file are you uploading?"
+        required: true
+        type: choice
+        options:
+          - cv
+          - portfolio
+      file_url:
+        description: "Direct download URL for the PDF (e.g. Google Drive, Dropbox, or any public link)"
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -15,6 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Download PDF
+        run: |
+          mkdir -p public/resume
+          curl -fSL -o "public/resume/${{ inputs.file_type }}.pdf" "${{ inputs.file_url }}"
+          echo "✅ Downloaded ${{ inputs.file_type }}.pdf"
 
       - name: Rename uploads & update profile.json
         run: |
