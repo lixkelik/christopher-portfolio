@@ -9,6 +9,7 @@ import { AchievementsSection } from "../components/AchievementsSection";
 import { CertificationsSection } from "../components/CertificationsSection";
 import { SkillsSection } from "../components/SkillsSection";
 import { ToolkitSection } from "../components/ToolkitSection";
+import { SeekingSection } from "../components/SeekingSection";
 import { Background } from "../components/Background";
 import { Reveal } from "../components/ui/Reveal";
 import { AskMeWidget } from "../components/AskMeWidget";
@@ -41,6 +42,9 @@ export const Home = () => {
         </Reveal>
         <Reveal>
           <ToolkitSection />
+        </Reveal>
+        <Reveal>
+          <SeekingSection />
         </Reveal>
         <Reveal>
           <ContactSection />

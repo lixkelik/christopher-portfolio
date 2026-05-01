@@ -1,0 +1,62 @@
+name: Process Resume / Portfolio Upload
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/resume/cv.pdf"
+      - "public/resume/portfolio.pdf"
+
+permissions:
+  contents: write
+
+jobs:
+  rename-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rename uploads & update profile.json
+        run: |
+          DATE_TAG=$(date -u +"%d%m")
+          CV_NAME="${DATE_TAG}-CV-CHRISTOPHER_FELIX_ATIKA.pdf"
+          PORTFOLIO_NAME="${DATE_TAG}-PORTFOLIO-CHRISTOPHER_FELIX_ATIKA.pdf"
+          CHANGED=false
+
+          # --- CV ---
+          if [ -f public/resume/cv.pdf ]; then
+            # Remove any previous dated CV
+            find public/resume -name '*-CV-CHRISTOPHER_FELIX_ATIKA.pdf' -delete
+            mv public/resume/cv.pdf "public/resume/${CV_NAME}"
+
+            # Update profile.json
+            sed -i "s|\"resumeUrl\":.*|\"resumeUrl\": \"resume/${CV_NAME}\",|" src/data/profile.json
+            CHANGED=true
+            echo "✅ CV renamed to ${CV_NAME}"
+          fi
+
+          # --- Portfolio ---
+          if [ -f public/resume/portfolio.pdf ]; then
+            # Remove any previous dated portfolio
+            find public/resume -name '*-PORTFOLIO-CHRISTOPHER_FELIX_ATIKA.pdf' -delete
+            mv public/resume/portfolio.pdf "public/resume/${PORTFOLIO_NAME}"
+
+            # Update profile.json
+            sed -i "s|\"portfolioUrl\":.*|\"portfolioUrl\": \"resume/${PORTFOLIO_NAME}\"|" src/data/profile.json
+            CHANGED=true
+            echo "✅ Portfolio renamed to ${PORTFOLIO_NAME}"
+          fi
+
+          if [ "$CHANGED" = false ]; then
+            echo "No cv.pdf or portfolio.pdf found — nothing to do."
+            exit 0
+          fi
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/resume/ src/data/profile.json
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "ci: rename CV/portfolio with date stamp [skip ci]"
+          git push

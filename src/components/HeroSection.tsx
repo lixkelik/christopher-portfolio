@@ -122,9 +122,8 @@ export const HeroSection = () => {
               </a>
               {profile.resumeUrl && (
                 <a
-                  href={profile.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={assetUrl(profile.resumeUrl)}
+                  download
                   className="px-6 py-2 rounded-full border border-border hover:border-primary hover:bg-card transition inline-flex items-center gap-2"
                 >
                   <Download size={16} /> Resume
@@ -132,9 +131,8 @@ export const HeroSection = () => {
               )}
               {profile.portfolioUrl && (
                 <a
-                  href={profile.portfolioUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={assetUrl(profile.portfolioUrl)}
+                  download
                   className="px-6 py-2 rounded-full border border-border hover:border-primary hover:bg-card transition inline-flex items-center gap-2"
                 >
                   <FileText size={16} /> Portfolio

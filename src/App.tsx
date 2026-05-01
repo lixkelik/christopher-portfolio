@@ -12,12 +12,19 @@ const HashScroller = () => {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        // wait one frame so the target page has mounted
-        requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth" }));
-        return;
-      }
+      // Retry a few times — Reveal wrappers may delay mounting the target section
+      let attempts = 0;
+      const tryScroll = () => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else if (attempts < 10) {
+          attempts++;
+          setTimeout(tryScroll, 50);
+        }
+      };
+      requestAnimationFrame(tryScroll);
+      return;
     }
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [pathname, hash]);

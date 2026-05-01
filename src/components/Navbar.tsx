@@ -13,6 +13,7 @@ import {
   ScrollText,
   Trophy,
   Wrench,
+  Compass,
   X,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -34,6 +35,7 @@ const navItems: NavItem[] = [
   { name: "Certifications", href: "#certifications", icon: ScrollText },
   { name: "Skills", href: "#skills", icon: Code2 },
   { name: "Toolkit", href: "#toolkit", icon: Wrench },
+  { name: "Seeking", href: "#seeking", icon: Compass },
   { name: "Contact", href: "#contact", icon: Mail },
 ];
 

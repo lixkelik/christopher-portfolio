@@ -110,7 +110,7 @@ export const ProjectDetail = () => {
                 <img
                   src={assetUrl(project.cover)}
                   alt={project.title}
-                  className="w-full h-full object-cover aspect-[4/3]"
+                  className="w-full h-full object-cover aspect-video"
                 />
               </button>
             </motion.div>
@@ -135,7 +135,14 @@ export const ProjectDetail = () => {
                 )}
                 <GithubStars githubUrl={project.links?.github} />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight flex items-center gap-4">
+                {project.logo && (
+                  <img
+                    src={assetUrl(project.logo)}
+                    alt={`${project.title} logo`}
+                    className="w-12 h-12 md:w-14 md:h-14 rounded-xl border border-border bg-card/90 shadow-lg object-contain p-1.5 shrink-0"
+                  />
+                )}
                 {project.title}
               </h1>
               <p className="text-lg text-foreground/70">{project.tagline}</p>
@@ -303,6 +310,38 @@ export const ProjectDetail = () => {
             </Section>
           )}
 
+          {/* VIDEO */}
+          {project.videoUrl && (
+            <Section title="Video">
+              <div className="aspect-video rounded-xl overflow-hidden border border-border bg-black/40">
+                <iframe
+                  src={toEmbed(project.videoUrl)}
+                  title={`${project.title} video`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </Section>
+          )}
+
+          {/* LEARNINGS */}
+          {project.learnings && project.learnings.length > 0 && (
+            <Section title="What I Learned">
+              <ul className="space-y-3">
+                {project.learnings.map((l) => (
+                  <li
+                    key={l}
+                    className="flex gap-3 p-4 rounded-xl border border-border bg-card/40"
+                  >
+                    <PlayCircle size={18} className="text-primary mt-0.5 shrink-0" />
+                    <span className="text-foreground/85">{l}</span>
+                  </li>
+                ))}
+              </ul>
+            </Section>
+          )}
+
           {/* GALLERY */}
           {project.gallery.length > 0 && (
             <Section title="Gallery">
@@ -326,38 +365,6 @@ export const ProjectDetail = () => {
                   </motion.button>
                 ))}
               </div>
-            </Section>
-          )}
-
-          {/* VIDEO */}
-          {project.videoUrl && (
-            <Section title="Walkthrough">
-              <div className="aspect-video rounded-xl overflow-hidden border border-border bg-black/40">
-                <iframe
-                  src={toEmbed(project.videoUrl)}
-                  title={`${project.title} video`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            </Section>
-          )}
-
-          {/* LEARNINGS */}
-          {project.learnings && project.learnings.length > 0 && (
-            <Section title="What I learned">
-              <ul className="space-y-3">
-                {project.learnings.map((l) => (
-                  <li
-                    key={l}
-                    className="flex gap-3 p-4 rounded-xl border border-border bg-card/40"
-                  >
-                    <PlayCircle size={18} className="text-primary mt-0.5 shrink-0" />
-                    <span className="text-foreground/85">{l}</span>
-                  </li>
-                ))}
-              </ul>
             </Section>
           )}
 
@@ -451,8 +458,8 @@ const Section = ({
     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     className="mb-14"
   >
-    <h2 className="text-2xl md:text-3xl font-bold mb-5">
-      <span className="text-primary">#</span> {title}
+    <h2 className="text-xl md:text-2xl font-bold mb-5 pl-4 border-l-[3px] border-primary">
+      {title}
     </h2>
     {children}
   </motion.section>

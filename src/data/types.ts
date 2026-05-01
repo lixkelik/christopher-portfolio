@@ -38,6 +38,8 @@ export type Project = {
   summary: string;
   /** Card cover image (path relative to /public, e.g. "projects/aura.webp"). */
   cover: string;
+  /** Optional app logo (path relative to /public, e.g. "projects/logos/aura.webp"). */
+  logo?: string;
   /** Detail page gallery. Include the cover here too if you want it in the gallery. */
   gallery: GalleryImage[];
   tags: string[];

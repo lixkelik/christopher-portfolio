@@ -13,6 +13,13 @@ const SUGGESTIONS = [
   "Is he open to new roles right now?",
 ];
 
+const PROVIDER_LABELS: Record<string, string> = {
+  groq: "Llama 3.3",
+  cloudflare: "Gemma 4",
+  cerebras: "Llama 3.1",
+};
+const MODEL_CYCLE = Object.values(PROVIDER_LABELS);
+
 const MAX_INPUT_CHARS = 200;
 // Anti-spam guards (client-side; the worker enforces hard limits per IP).
 const MIN_SEND_INTERVAL_MS = 1500; // wait at least this long between sends
@@ -40,6 +47,10 @@ export const AskMeWidget = () => {
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Track which provider last responded (for dynamic model label).
+  const [lastProvider, setLastProvider] = useState<string | null>(null);
+  // Cycle through model names when no response yet.
+  const [cycleIdx, setCycleIdx] = useState(0);
   // Index of the assistant message currently being "typed" in. -1 = none.
   const [typingIndex, setTypingIndex] = useState<number>(-1);
   // Bumped on reset so the empty-state block re-mounts and re-animates.
@@ -79,6 +90,20 @@ export const AskMeWidget = () => {
 
   // Hide entirely if the worker URL isn't configured
   if (!ENDPOINT) return null;
+
+  // Cycle through model names every 2.5s when no provider is known yet
+  useEffect(() => {
+    if (lastProvider) return;
+    const timer = setInterval(() => {
+      setCycleIdx((i) => (i + 1) % MODEL_CYCLE.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, [lastProvider]);
+
+  // Computed model label
+  const modelLabel = lastProvider
+    ? PROVIDER_LABELS[lastProvider] ?? lastProvider
+    : MODEL_CYCLE[cycleIdx];
 
   // Persist conversation for the session
   // (intentionally not persisted — every refresh starts fresh)
@@ -221,6 +246,7 @@ export const AskMeWidget = () => {
       const reply: string =
         data?.choices?.[0]?.message?.content?.trim() ??
         "Hmm, I didn't get a response. Try again?";
+      if (data?._provider) setLastProvider(data._provider);
       const updated: Msg[] = [...next, { role: "assistant", content: reply }];
       setMessages(updated);
       setTypingIndex(updated.length - 1);
@@ -246,6 +272,7 @@ export const AskMeWidget = () => {
     setError(null);
     setTypingIndex(-1);
     setResetKey((k) => k + 1);
+    setLastProvider(null);
   };
 
   const remaining = MAX_INPUT_CHARS - input.length;
@@ -299,8 +326,19 @@ export const AskMeWidget = () => {
                 <p className="font-semibold text-sm leading-tight">
                   Ask about Christopher
                 </p>
-                <p className="text-[11px] text-foreground/55">
-                  Llama 3.3
+                <p className="text-[11px] text-foreground/55 overflow-hidden h-4">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={modelLabel}
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -10, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="block"
+                    >
+                      {modelLabel}
+                    </motion.span>
+                  </AnimatePresence>
                 </p>
               </div>
               {messages.length > 0 && (
@@ -526,7 +564,11 @@ const FloatingLauncher = ({
     : { opacity: 0, scale: 0.6, y: 30 };
 
   return (
-    <div className="fixed bottom-5 right-5 z-40 pointer-events-none">
+    <motion.div
+      className="fixed bottom-5 right-5 z-40 pointer-events-none"
+      exit={{ opacity: 0, scale: 0.5, y: 20 }}
+      transition={{ duration: 0.25, ease: "easeIn" }}
+    >
       <div className="relative pointer-events-auto">
         {/* Attract tooltip — speech bubble pointing at the button */}
         <AnimatePresence>
@@ -657,7 +699,7 @@ const FloatingLauncher = ({
           </span>
         </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

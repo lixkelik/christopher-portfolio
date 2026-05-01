@@ -222,6 +222,13 @@ const HeroCard = ({ project }: { project: Project }) => {
           <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-primary text-primary-foreground shadow-md">
             <Sparkles size={12} /> Featured
           </span>
+          {project.logo && (
+            <img
+              src={assetUrl(project.logo)}
+              alt={`${project.title} logo`}
+              className="absolute bottom-4 left-4 w-12 h-12 rounded-xl border border-border bg-card/90 backdrop-blur-sm shadow-lg object-contain p-1"
+            />
+          )}
           {project.gallery.length > 1 && (
             <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-black/60 text-white backdrop-blur-sm">
               <Images size={12} />
@@ -284,7 +291,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       to={`/projects/${project.id}`}
       className="group bg-card/70 backdrop-blur-sm rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-[0_0_20px_hsl(var(--primary)/0.18)] transition h-full text-left flex flex-col"
     >
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative aspect-video overflow-hidden">
         <CoverImage
           src={project.cover}
           alt={project.title}
@@ -301,6 +308,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <span className="absolute top-3 left-3 inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-primary text-primary-foreground">
             <Sparkles size={11} /> Featured
           </span>
+        )}
+        {project.logo && (
+          <img
+            src={assetUrl(project.logo)}
+            alt={`${project.title} logo`}
+            className="absolute bottom-3 left-3 w-10 h-10 rounded-xl border border-border bg-card/90 backdrop-blur-sm shadow-lg object-contain p-1"
+          />
         )}
       </div>
       <div className="p-5 flex flex-col flex-1">

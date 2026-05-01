@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "bot",
+    "title": "Agentic AI Framework",
+    "desc": "Building autonomous agents using AWS's Strands framework — tool calling, memory, multi-step planning, and evaluation loops that actually ship to production.",
+    "tags": ["Strands", "Agents", "Tool Use"]
+  },
+  {
+    "icon": "database",
+    "title": "RAG & Vector Databases",
+    "desc": "Designing knowledge bases with embeddings — Pinecone, Qdrant, pgvector — so LLMs reason over private context with grounded, source-cited answers.",
+    "tags": ["Embeddings", "Pinecone", "RAG"]
+  },
+  {
+    "icon": "workflow",
+    "title": "Knowledge Base with AWS Bedrock",
+    "desc": "Encoding and decoding knowledge bases using AWS Bedrock — building retrieval pipelines that transform unstructured data into grounded, queryable context for foundation models.",
+    "tags": ["AWS Bedrock", "Knowledge Base", "Encoding"]
+  },
+  {
+    "icon": "sparkles",
+    "title": "AI Environments with AWS AgentCore",
+    "desc": "Learning to orchestrate AI agent environments using AWS AgentCore — runtime management, tool integration, and scalable agent deployment infrastructure.",
+    "tags": ["AWS AgentCore", "Agent Runtime", "Infrastructure"]
+  },
+  {
+    "icon": "server",
+    "title": "Building MCP Servers",
+    "desc": "Creating Model Context Protocol servers to expose tools, resources, and prompts to AI agents — enabling standardized, interoperable agent-tool communication.",
+    "tags": ["MCP", "Server", "Protocol"]
+  }
+]

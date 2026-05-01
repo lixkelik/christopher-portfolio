@@ -2,156 +2,253 @@
   {
     "id": "aura",
     "title": "Aura",
-    "tagline": "AI-powered outfit assistant for the visually impaired",
-    "summary": "An assistive app that helps blind users pick outfits matching the occasion, powered by a custom-built AI model and RFID tags.",
-    "cover": "projects/aura.webp",
+    "tagline": "Dress confidently without sight — AI + RFID wardrobe assistant",
+    "summary": "Built a custom AI model and RFID-powered system that helps visually impaired users independently select matching outfits for any occasion. Honored by Microsoft APAC and presented to the President Director of Microsoft Indonesia.",
+    "cover": "projects/aura/aura-cover.webp",
+    "logo": "projects/aura/logo-aura.webp",
     "gallery": [
-      { "src": "projects/aura.webp", "caption": "App cover" }
+      { "src": "projects/aura/aura-cover.webp", "caption": "App cover" },
+      { "src": "projects/aura/aura.webp", "caption": "Project Details" },
+      { "src": "projects/aura/aura-achievements.webp", "caption": "Aura Achievements" },
+      { "src": "projects/aura/aura-lean-canvas.webp", "caption": "Aura Lean Canvas" }
     ],
-    "tags": ["Flutter", "TensorFlow", "RFID", "Accessibility"],
+    "tags": ["Flutter", "TensorFlow", "RFID", "Azure", "Accessibility"],
     "category": "Mobile / AI",
     "role": "Mobile & ML Engineer",
     "timeline": "2024",
-    "team": "Team of 4",
+    "team": "Team of 2",
     "status": "Live",
     "featured": true,
-    "problem": "Blind and visually-impaired individuals often struggle to dress appropriately for specific occasions because they cannot visually verify outfit combinations. Existing solutions rely on memorisation or sighted assistance, which limits independence.\n\nAura tackles this by combining RFID-tagged clothing items with an on-device AI model that recommends outfits based on the purpose the user states (e.g. work, casual, formal).",
+    "problem": "Blind and visually impaired individuals face a daily challenge most people never consider — getting dressed. Without the ability to visually verify outfit combinations, they depend on memorisation or sighted assistance, limiting their independence.\n\nAura solves this by pairing RFID-tagged clothing with HarmonyAI, a custom-built model that analyses color profiles, pattern compatibility, and occasion suitability to recommend complete outfits. The phone's built-in NFC reader identifies each garment instantly, and voice-first interaction guides the user through every step.\n\nThe project was recognised by Microsoft APAC, presented to Microsoft Indonesia leadership, and received Azure cloud credits for backend infrastructure.",
     "features": [
-      "Custom-trained ML model for outfit matching by occasion",
-      "RFID scanner integration to identify garments instantly",
-      "Voice-first interaction tuned for screen reader users",
-      "Wardrobe registration flow with audio confirmations"
+      "HarmonyAI — custom model that scores color match between 2+ garments and generates a color profile",
+      "RFID tag reader via phone's built-in NFC to identify garments from a closet",
+      "Voice-first interaction with full screen reader accessibility",
+      "Wardrobe registration flow with audio confirmations",
+      "Microsoft Azure pipeline for model storage, data processing, and scalability"
     ],
     "techStack": [
       { "name": "Flutter", "icon": "flutter" },
-      { "name": "TensorFlow", "icon": "tensorflow" },
       { "name": "TensorFlow Lite", "icon": "tensorflow" },
-      { "name": "RFID" },
+      { "name": "SQLite", "icon": "sqlite" },
+      { "name": "Microsoft Azure", "icon": "microsoftazure" },
+      { "name": "RFID / NFC" },
       { "name": "Dart", "icon": "dart" }
     ],
     "learnings": [
-      "Designing UX for non-visual primary users completely changes default assumptions.",
-      "Quantising a TensorFlow model for on-device inference on mid-range Android phones.",
-      "Bridging native RFID hardware events into a Flutter app via platform channels."
+      "Designing UX for non-visual users fundamentally shifts every assumption — haptic feedback, audio cues, and sequential navigation replace visual hierarchy entirely.",
+      "Training a color-compatibility model required building a custom dataset of outfit pairings rated by fashion professionals.",
+      "Bridging native NFC/RFID hardware events into Flutter via platform channels taught low-level platform integration.",
+      "Presenting to Microsoft leadership sharpened the ability to distill a technical product into a compelling business narrative."
     ],
     "links": {
-      "demo": "https://drive.google.com/file/d/1ZWQM6mltKVA3lvphE-JECtQaig2UXqpD/view?usp=sharing"
-    }
+      "paper": "https://drive.google.com/file/d/1ZWQM6mltKVA3lvphE-JECtQaig2UXqpD/view?usp=sharing"
+    },
+    "videoUrl": "https://youtu.be/K44468nVeSg"
   },
   {
     "id": "visio",
     "title": "Visio",
-    "tagline": "Gamified learning for visually-impaired children",
-    "summary": "A playful, audio-first learning app that helps blind children grasp object meanings and social interactions through gamified lessons.",
-    "cover": "projects/visio.webp",
+    "tagline": "Real-time object detection that teaches children to see with sound",
+    "summary": "An AI-powered learning companion that uses live camera object detection, ChatGPT integration, and gamified lessons to help visually impaired and curious children explore and understand the world around them.",
+    "cover": "projects/visio/visio-cover.webp",
+    "logo": "projects/visio/logo-visio.webp",
     "gallery": [
-      { "src": "projects/visio.webp", "caption": "Visio interface" }
+      { "src": "projects/visio/visio-cover.webp", "caption": "Visio cover" },
+      { "src": "projects/visio/visio.webp", "caption": "Product description" }
     ],
-    "tags": ["Flutter", "TFLite", "Object Detection", "EdTech"],
+    "tags": ["Flutter", "TensorFlow", "Object Detection", "ChatGPT", "EdTech", "Accessibility"],
     "category": "Mobile / AI",
     "role": "Mobile Developer",
-    "timeline": "2024",
+    "timeline": "2023",
+    "team": "Team of 2",
     "status": "Live",
     "featured": true,
-    "problem": "Inclusive education tools for blind children are scarce. Visio uses real-time object detection to turn a phone camera into a guided learning companion, narrating what the child encounters and reinforcing concepts through small games.",
+    "problem": "Inclusive education tools for blind children remain scarce and often lack engagement. Children learn best through play and curiosity, yet most assistive apps offer static, limited experiences.\n\nVisio turns a phone camera into a real-time learning companion — it detects objects, narrates what the child encounters, and reinforces understanding through interactive games. With ChatGPT integration, children can ask open-ended questions about any detected object, expanding their knowledge beyond pre-programmed content.\n\nFlutter Isolates (multithreading) ensure the AI detection runs on a separate thread, keeping the UI buttery smooth even during continuous camera inference.",
     "features": [
-      "On-device object detection with TFLite",
-      "Audio narration with adjustable pace",
-      "Mini-games that reinforce vocabulary and social cues",
-      "Parent dashboard for progress tracking"
+      "Real-time object detection using TensorFlow Lite with COCO dataset",
+      "Flutter Isolates for multithreaded processing — AI inference separated from UI logic",
+      "ChatGPT integration for open-ended Q&A about detected objects",
+      "Learn Braille mode with haptic feedback for tactile alphabet learning",
+      "Two-player online game mode via Firebase for social learning",
+      "Audio narration with adjustable pace"
     ],
     "techStack": [
       { "name": "Flutter", "icon": "flutter" },
       { "name": "TensorFlow Lite", "icon": "tensorflow" },
+      { "name": "Firebase", "icon": "firebase" },
+      { "name": "OpenAI", "icon": "openai" },
       { "name": "Dart", "icon": "dart" }
     ],
     "learnings": [
-      "Optimising TFLite models for sustained real-time inference on phones.",
-      "Co-designing with educators to validate pedagogical effectiveness."
+      "Running continuous ML inference on mobile requires isolating compute from the UI thread — Flutter Isolates made this practical without native code.",
+      "Integrating a conversational AI (ChatGPT) alongside real-time detection created a 'curiosity loop' that kept children engaged far longer than static content.",
+      "Designing haptic-only Braille lessons taught the importance of non-visual feedback channels in accessibility design.",
+      "Building a multiplayer game with Firebase Realtime Database required careful state synchronisation across devices."
     ],
-    "links": {}
+    "links": {
+      "github": "https://github.com/lixkelik/Visio",
+      "paper": "https://drive.google.com/file/d/1u1XyjlozszvRQdOcyOgE1bqf0l_5Jl-w/view"
+    },
+    "videoUrl": "https://youtu.be/MtC4cfAlA28"
   },
   {
     "id": "tukerin",
     "title": "Tukerin",
-    "tagline": "Battery-swap network for Indonesian EV riders",
-    "summary": "Tukerin helps Indonesian EV users locate nearby battery-swap stations and trigger instant swaps directly from the app.",
-    "cover": "projects/tukerin.webp",
+    "tagline": "Find, swap, and go — battery exchange network for EV motorcycles",
+    "summary": "A location-based mobile app that helps Indonesian EV motorcycle riders locate nearby Battery Swap Stations, navigate with custom routing, and swap batteries instantly — featuring a C2C model where anyone can register as a station. Published in IEEE.",
+    "cover": "projects/tukerin/tukerin.webp",
+    "logo": "projects/tukerin/logo-tukerin.webp",
     "gallery": [
-      { "src": "projects/tukerin.webp", "caption": "Tukerin map view" }
+      { "src": "projects/tukerin/tukerin.webp", "caption": "Tukerin product description" },
+      { "src": "projects/tukerin/tukerin-ui-homepage.webp", "caption": "Tukerin homepage" },
+      { "src": "projects/tukerin/tukerin-ui-direction.webp", "caption": "Map direction view" },
+      { "src": "projects/tukerin/tukerin-ui-detailpage.webp", "caption": "BSS Detail page" }
     ],
-    "tags": ["Flutter", "GCP", "Maps", "Mobility"],
+    "tags": ["Flutter", "Firebase", "Google Maps"],
     "category": "Mobile",
     "role": "Mobile Developer",
     "timeline": "2023",
+    "team": "Team of 4",
     "status": "Live",
-    "featured": true,
-    "problem": "EV adoption in Indonesia is bottlenecked by long charging times and uneven charger distribution. Battery swapping is faster but requires coordinating availability across stations. Tukerin gives riders a real-time map of nearby stations and lets them reserve a charged battery before arrival.",
+    "featured": false,
+    "problem": "Indonesia's transition to electric vehicles is stalled by a single pain point — charging takes hours, and charging infrastructure is sparse. Battery swapping is the fastest alternative, but stations are few and their locations are hard to discover.\n\nTukerin introduces a customer-to-customer (C2C) model: any EV user can register their home or shop as a Battery Swap Station, similar to how food delivery platforms let small restaurants go online. This allows the BSS network to grow organically without heavy capital investment.\n\nThe app uses the Haversine formula for precise distance calculation and custom Google Maps navigation to route riders directly to the nearest available station.",
     "features": [
-      "Live station availability on Google Maps",
-      "Reserve-before-arrival flow",
-      "Trip history & cost tracking",
-      "Cloud-hosted backend on GCP"
+      "Live BSS map with real-time availability powered by Google Maps API",
+      "Haversine formula for accurate distance calculation between rider and stations",
+      "Custom navigation paths with turn-by-turn routing",
+      "C2C station registration — any EV user can become a BSS operator",
+      "Trip history and cost tracking"
     ],
     "techStack": [
       { "name": "Flutter", "icon": "flutter" },
+      { "name": "Firebase", "icon": "firebase" },
+      { "name": "Google Maps", "icon": "googlemaps" },
       { "name": "Google Cloud", "icon": "googlecloud" },
-      { "name": "Google Maps", "icon": "googlemaps" }
+      { "name": "Dart", "icon": "dart" }
+    ],
+    "learnings": [
+      "Implementing the Haversine formula from scratch deepened understanding of geospatial math and its edge cases near the poles and the antimeridian.",
+      "Designing a C2C marketplace requires trust signals — user ratings, verification badges, and transaction history became essential for BSS credibility.",
+      "Writing and co-authoring an IEEE publication sharpened technical writing skills and taught the peer review process.",
+      "Custom polyline rendering on Google Maps required decoding route geometry and handling API rate limits gracefully."
     ],
     "links": {
+      "github": "https://github.com/lixkelik/tukerin",
       "paper": "https://ieeexplore.ieee.org/document/10331276"
     }
   },
   {
+    "id": "manu",
+    "title": "Manu",
+    "tagline": "Connecting small businesses with shared manufacturing capacity",
+    "summary": "An e-commerce-style platform that helps Indonesian SMEs discover and book shared factory capacity, reducing the capital barrier to manufacturing and enabling small businesses to scale production without owning a factory.",
+    "cover": "projects/manu/manu.webp",
+    "logo": "projects/manu/logo-manu.webp",
+    "gallery": [
+      { "src": "projects/manu/manu.webp", "caption": "Manu app interface" }
+    ],
+    "tags": ["Android", "Firebase", "E-commerce"],
+    "category": "Mobile",
+    "role": "Android Developer",
+    "timeline": "2023",
+    "team": "Team of 3",
+    "status": "Archived",
+    "problem": "Indonesia's SME (UMKM) sector boomed after COVID-19, but survival rates remain low — the primary bottleneck is insufficient capital for production. Most small business owners can't afford to build or lease a factory, yet their products need manufacturing at scale.\n\nManu is a first-of-its-kind platform that matches SMEs with available shared factories based on their product category and location. Think of it as an online food delivery model applied to manufacturing — factories register their idle capacity, and SMEs book production runs through the app.\n\nWith category and location filters, SMEs can find the right factory in minutes instead of months of networking.",
+    "features": [
+      "Factory discovery with category and location-based filtering",
+      "E-commerce-style booking flow for manufacturing capacity",
+      "MVVM architecture for clean separation of concerns",
+      "Firebase backend with SQLite for offline-first local persistence",
+      "Factory registration portal for supply-side onboarding"
+    ],
+    "techStack": [
+      { "name": "Android", "icon": "android" },
+      { "name": "Java", "icon": "java" },
+      { "name": "SQLite", "icon": "sqlite" },
+      { "name": "Firebase", "icon": "firebase" }
+    ],
+    "learnings": [
+      "Building with MVVM on native Android taught the discipline of separating UI from business logic — a pattern that transferred directly to every later project.",
+      "Designing an offline-first architecture with SQLite + Firebase sync required careful conflict resolution strategies.",
+      "A two-sided marketplace needs supply before demand — onboarding factories first proved critical for initial traction."
+    ],
+    "links": {}
+  },
+  {
     "id": "tanivest",
     "title": "Tanivest",
-    "tagline": "Crowd-investing platform for Indonesian farmland",
-    "summary": "Tanivest connects investors with smallholder farmers, unlocking capital and modern tooling to keep farmland productive.",
-    "cover": "projects/tanivest.webp",
+    "tagline": "Micro-investment platform to save Indonesia's shrinking farmland",
+    "summary": "A crowd-investing mobile app that pools micro-investments from everyday users to fund smallholder farm projects, tackling the capital shortage that causes 150,000+ hectares of Indonesian agricultural land to be abandoned annually.",
+    "cover": "projects/tanivest/tanivest-cover.webp",
+    "logo": "projects/tanivest/logo-tanivest.webp",
     "gallery": [
-      { "src": "projects/tanivest.webp", "caption": "Tanivest dashboard" }
+      { "src": "projects/tanivest/tanivest-cover.webp", "caption": "Tanivest cover" },
+      { "src": "projects/tanivest/tanivest.webp", "caption": "Tanivest product description" }
     ],
-    "tags": ["Flutter", "Firebase", "FinTech", "AgriTech"],
+    "tags": ["Java", "FinTech", "AgriTech"],
     "category": "Mobile",
     "role": "Mobile Developer",
     "timeline": "2023",
+    "team": "Team of 2",
     "status": "Archived",
-    "problem": "Indonesia loses thousands of hectares of farmland annually because smallholders lack capital and efficiency tools, pushing entrepreneurs toward more lucrative industries. Tanivest pools micro-investments to fund farm projects and shares yields back to investors.",
+    "problem": "Indonesia is an agricultural nation — the sector contributed 13.86% of national GDP between 2010–2016, and the government allocates an average of 31.24% of the state budget to support it. Yet 150,000 hectares of farmland disappear every year, equivalent to 300,000 tons of lost production.\n\nThe root cause is capital. Farmers lack the funds to maintain efficiency, profits drop, and landowners convert to more lucrative industries. Tanivest addresses this by letting everyday investors fund farm projects in small amounts, democratising agricultural investment while giving farmers the capital they need to keep land productive.",
     "features": [
-      "Browseable list of investable farm projects",
-      "Yield tracking & payout history",
-      "KYC + secure wallet on Firebase Auth/Firestore"
+      "Browseable list of investable farm projects with yield projections",
+      "Interactive charts and graphs for portfolio tracking",
+      "Yield tracking and payout history per investment",
+      "KYC onboarding with secure authentication"
     ],
     "techStack": [
-      { "name": "Flutter", "icon": "flutter" },
-      { "name": "Firebase", "icon": "firebase" }
+      { "name": "Java", "icon": "java" },
+      { "name": "Graph & Chart Libraries" }
+    ],
+    "learnings": [
+      "Visualising financial data with interactive charts requires careful attention to axis scaling and update frequency to avoid misleading users.",
+      "Building a FinTech product taught the importance of trust UI — clear transaction histories, verified badges, and transparent fee structures.",
+      "Working on a socially impactful product (preserving farmland) provided strong motivation and a compelling narrative for stakeholder presentations."
     ],
     "links": {}
   },
   {
     "id": "infarm",
     "title": "Infarm",
-    "tagline": "Marketplace for fair-priced farm inputs",
-    "summary": "An e-commerce platform that lets Indonesian farmers compare vendors and access fair prices on seeds, fertiliser, and equipment.",
-    "cover": "projects/infarm.webp",
+    "tagline": "Fair-priced farm inputs marketplace built for non-tech-savvy farmers",
+    "summary": "An e-commerce platform purpose-built for Indonesian farmers — with simplified UX, subcategory-based navigation, and direct seller messaging — to break vendor monopolies on farm input pricing caused by post-COVID supply disruptions.",
+    "cover": "projects/infarm/infarm-cover.webp",
+    "logo": "projects/infarm/logo-infarm.webp",
     "gallery": [
-      { "src": "projects/infarm.webp", "caption": "Infarm storefront" }
+      { "src": "projects/infarm/infarm-cover.webp", "caption": "Infarm storefront" },
+      { "src": "projects/infarm/infarm.webp", "caption": "Product description" }
     ],
     "tags": ["Flutter", "Firebase", "E-commerce", "AgriTech"],
     "category": "Mobile",
     "role": "Mobile Developer",
-    "timeline": "2022",
+    "timeline": "2023",
+    "team": "Team of 2",
     "status": "Archived",
-    "problem": "Post-COVID supply disruptions left Indonesian farmers paying inflated prices for inputs with limited vendor choice. Infarm aggregates suppliers into a single marketplace where farmers can compare prices, read reviews, and order in bulk.",
+    "problem": "COVID-19 disrupted farm input supply chains across Indonesia, leaving farmers at the mercy of local monopolies with inflated prices. Most farmers lack connections to alternative vendors and have no way to compare pricing.\n\nInfarm was built with a critical constraint in mind: many Indonesian farmers are not fluent with technology. The UX prioritises simplicity — subcategory filters help users find exactly what they need (seeds, fertiliser, equipment), and a direct-message-with-seller feature enables price negotiation, replicating the trusted in-person haggling experience in a digital format.",
     "features": [
-      "Multi-vendor product catalogue",
-      "Cart & order tracking",
-      "Vendor onboarding portal"
+      "Multi-vendor product catalogue with subcategory-based filtering",
+      "Direct message with seller for negotiation and inquiry",
+      "GetX state management for optimised performance and scalability",
+      "Lazy loading for handling large product queries efficiently",
+      "Cart, order tracking, and purchase history"
     ],
     "techStack": [
       { "name": "Flutter", "icon": "flutter" },
-      { "name": "Firebase", "icon": "firebase" }
+      { "name": "Firebase", "icon": "firebase" },
+      { "name": "GetX" },
+      { "name": "Dart", "icon": "dart" }
     ],
-    "links": {}
+    "learnings": [
+      "Designing for non-tech-savvy users forced radical simplification — every extra tap is a potential drop-off point.",
+      "Implementing lazy loading for paginated product queries significantly improved perceived performance on low-end devices.",
+      "GetX state management proved effective for rapid prototyping but required discipline to avoid over-coupling controllers."
+    ],
+    "links": {
+      "github": "https://github.com/lixkelik/infarm",
+      "paper": "https://drive.google.com/file/d/11xr9jNS2xc7Ow_IDOcsxWlSBPCR35ZDI/view?usp=sharing"
+    }
   }
 ]

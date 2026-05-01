@@ -17,6 +17,7 @@ import achievementsData from "../../src/data/achievements.json";
 import certificationsData from "../../src/data/certifications.json";
 import educationData from "../../src/data/education.json";
 import toolkitData from "../../src/data/toolkit.json";
+import seekingData from "../../src/data/seeking.json";
 
 type Social = { label: string; icon: string; href: string };
 type Profile = {
@@ -99,6 +100,13 @@ type ToolkitData = {
   categories: { id: string; label: string; items: { name: string }[] }[];
 };
 
+type SeekingItem = {
+  icon: string;
+  title: string;
+  desc: string;
+  tags: string[];
+};
+
 const profile = profileData as Profile;
 const experiences = experiencesData as Experience[];
 const projects = projectsData as Project[];
@@ -107,6 +115,7 @@ const achievements = achievementsData as Achievement[];
 const certifications = certificationsData as Certification[];
 const education = educationData as Education;
 const toolkit = (toolkitData as ToolkitData).categories;
+const seeking = seekingData as SeekingItem[];
 
 const buildMarkdown = (): string => {
   const lines: string[] = [];
@@ -241,6 +250,12 @@ const buildMarkdown = (): string => {
   push(`## Daily Toolkit`);
   toolkit.forEach((cat) => {
     push(`- ${cat.label}: ${cat.items.map((i) => i.name).join(", ")}`);
+  });
+  blank();
+
+  push(`## What I'm Building Toward (Focus Areas)`);
+  seeking.forEach((s) => {
+    push(`- **${s.title}**: ${s.desc} [${s.tags.join(", ")}]`);
   });
   blank();
 
