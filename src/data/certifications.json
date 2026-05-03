@@ -6,7 +6,8 @@
     "year": 2026,
     "image": "certifications/cert-introduction-to-agent-skills.webp",
     "credentialUrl": "https://verify.skilljar.com/c/6rzfii5ddy6q",
-    "tags": ["Agent Skills", "AI", "Claude"]
+    "tags": ["Agent Skills", "AI", "Claude"],
+    "featured": true
   },
   {
     "id": "claude-fluency-framework-foundations",
@@ -15,7 +16,8 @@
     "year": 2026,
     "image": "certifications/cert-ai-fluency.webp",
     "credentialUrl": "https://verify.skilljar.com/c/tba9jnjywmu6",
-    "tags": ["AI", "Prompt Engineering", "Claude"]
+    "tags": ["AI", "Prompt Engineering", "Claude"],
+    "featured": true
   },
   {
     "id": "claude-101",

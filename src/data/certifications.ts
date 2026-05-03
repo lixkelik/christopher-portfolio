@@ -11,6 +11,8 @@ export type Certification = {
   /** Optional URL to the verifiable credential. */
   credentialUrl?: string;
   tags?: string[];
+  /** When true, the card gets a golden glow + featured badge. */
+  featured?: boolean;
 };
 
 export const certifications: Certification[] = certificationsData as Certification[];
